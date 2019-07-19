@@ -31,19 +31,23 @@ namespace GameOfLife
             panel.Resize += (sender, e) => panel.Refresh();
             panel.Paint += (sender, e) => ResizeWorld(e.Graphics);
             panel.MouseClick += Panel_MouseClick;
+            bordersToolStripMenuItem.Click += (sender, e) => panel.Refresh();
 
             world = World.GetWorld(0, 0);
             world.OnLifeChange += (x, y, alive) => DrawCell(x, y, alive);
             game = new Game();
 
+            void SetTimer() => timer.Interval = 1000 * 1 / (int)speedNumericUpDown.Value;
             timer = new Timer();
             timer.Tick += (sender, e) => game.Tick();
-            speedNumericUpDown.ValueChanged += (sender, e) => timer.Interval = 1000 * 1 / (int)speedNumericUpDown.Value;
+            speedNumericUpDown.ValueChanged += (sender, e) => SetTimer();
 
+            bordersToolStripMenuItem.Checked = Properties.Settings.Default.DrawBorders;
             color = Properties.Settings.Default.Color;
             Width = Properties.Settings.Default.Width;
             Height = Properties.Settings.Default.Height;
             speedNumericUpDown.Value = Properties.Settings.Default.Speed;
+            SetTimer(); //Make sure timer is set, even if the loaded value is the same as the control's initial value.
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -52,19 +56,21 @@ namespace GameOfLife
             Properties.Settings.Default.Width = Width;
             Properties.Settings.Default.Height = Height;
             Properties.Settings.Default.Speed = speedNumericUpDown.Value;
+            Properties.Settings.Default.DrawBorders = bordersToolStripMenuItem.Checked;
             Properties.Settings.Default.Save();
         }
 
         void ResizeWorld(Graphics g)
         {
             worldRend = new WorldRendererUtil(CELL_SIZE, BORDER_SIZE, panel.ClientRectangle.Width, panel.ClientRectangle.Height);
-            DrawWorldBorders(g);
+            g.Clear(Color.Black);
+            if (bordersToolStripMenuItem.Checked)
+                DrawWorldBorders(g);
             FillWorld();
         }
 
         void DrawWorldBorders(Graphics g)
         {
-            g.Clear(Color.Black);
             Pen pen = new Pen(color);
             foreach (var line in worldRend.GetLinePoints())
                 g.DrawLine(pen, line.Item1.X, line.Item1.Y, line.Item2.X, line.Item2.Y);

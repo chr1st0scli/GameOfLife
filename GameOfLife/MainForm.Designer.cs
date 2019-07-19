@@ -54,6 +54,7 @@
             this.gosperGliderGunToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.speedNumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.bordersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.speedNumericUpDown)).BeginInit();
             this.SuspendLayout();
@@ -126,6 +127,7 @@
             // worldsToolStripMenuItem
             // 
             this.worldsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bordersToolStripMenuItem,
             this.colorToolStripMenuItem,
             this.resetToolStripMenuItem,
             this.stillLifeToolStripMenuItem,
@@ -139,14 +141,14 @@
             // colorToolStripMenuItem
             // 
             this.colorToolStripMenuItem.Name = "colorToolStripMenuItem";
-            this.colorToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.colorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.colorToolStripMenuItem.Text = "Color...";
             this.colorToolStripMenuItem.Click += new System.EventHandler(this.colorToolStripMenuItem_Click);
             // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.resetToolStripMenuItem.Text = "Reset";
             this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
             // 
@@ -155,7 +157,7 @@
             this.stillLifeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.blocksLoafsBeehivesBoatsToolStripMenuItem});
             this.stillLifeToolStripMenuItem.Name = "stillLifeToolStripMenuItem";
-            this.stillLifeToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.stillLifeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stillLifeToolStripMenuItem.Text = "Still Life";
             // 
             // blocksLoafsBeehivesBoatsToolStripMenuItem
@@ -171,20 +173,20 @@
             this.blinkerToolStripMenuItem,
             this.koksGalaxyToolStripMenuItem});
             this.oscillatorsToolStripMenuItem.Name = "oscillatorsToolStripMenuItem";
-            this.oscillatorsToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.oscillatorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.oscillatorsToolStripMenuItem.Text = "Oscillators";
             // 
             // blinkerToolStripMenuItem
             // 
             this.blinkerToolStripMenuItem.Name = "blinkerToolStripMenuItem";
-            this.blinkerToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.blinkerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.blinkerToolStripMenuItem.Text = "Blinker";
             this.blinkerToolStripMenuItem.Click += new System.EventHandler(this.TemplateToolStripMenuItem_Click);
             // 
             // koksGalaxyToolStripMenuItem
             // 
             this.koksGalaxyToolStripMenuItem.Name = "koksGalaxyToolStripMenuItem";
-            this.koksGalaxyToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.koksGalaxyToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.koksGalaxyToolStripMenuItem.Text = "Kok\'s galaxy";
             this.koksGalaxyToolStripMenuItem.Click += new System.EventHandler(this.TemplateToolStripMenuItem_Click);
             // 
@@ -194,7 +196,7 @@
             this.gliderToolStripMenuItem,
             this.lightweightSpaceshipToolStripMenuItem});
             this.spaceshipsToolStripMenuItem.Name = "spaceshipsToolStripMenuItem";
-            this.spaceshipsToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.spaceshipsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.spaceshipsToolStripMenuItem.Text = "Spaceships";
             // 
             // gliderToolStripMenuItem
@@ -219,7 +221,7 @@
             this.tenCellRowToolStripMenuItem,
             this.gosperGliderGunToolStripMenuItem});
             this.variousToolStripMenuItem.Name = "variousToolStripMenuItem";
-            this.variousToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
+            this.variousToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.variousToolStripMenuItem.Text = "Various";
             // 
             // smallExploderToolStripMenuItem
@@ -284,6 +286,13 @@
             0,
             0});
             // 
+            // bordersToolStripMenuItem
+            // 
+            this.bordersToolStripMenuItem.CheckOnClick = true;
+            this.bordersToolStripMenuItem.Name = "bordersToolStripMenuItem";
+            this.bordersToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bordersToolStripMenuItem.Text = "Borders";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,6 +343,7 @@
         private System.Windows.Forms.ToolStripMenuItem colorToolStripMenuItem;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown speedNumericUpDown;
+        private System.Windows.Forms.ToolStripMenuItem bordersToolStripMenuItem;
     }
 }
 
